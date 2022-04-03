@@ -12,7 +12,13 @@ import {
 import { useState } from 'react';
 import ResizeTextArea from 'react-textarea-autosize';
 
-const ContactForm = () => {
+const ContactForm = ({
+	color,
+	backgroundColor,
+	inputBgColor,
+	inputColor,
+	formColor,
+}) => {
 	const [name, setName] = useState('');
 	const [address, setAddress] = useState('');
 	const [email, setEmail] = useState('');
@@ -62,7 +68,13 @@ const ContactForm = () => {
 	};
 
 	return (
-		<VStack id='contact' as='form' p={10} onSubmit={handleSubmit}>
+		<VStack
+			id='contact'
+			as='form'
+			p={10}
+			backgroundColor={formColor}
+			onSubmit={handleSubmit}
+		>
 			<FormControl id='name' isRequired>
 				<FormLabel>Name</FormLabel>
 				<Input
@@ -71,6 +83,8 @@ const ContactForm = () => {
 					value={name}
 					onChange={handleNameChange}
 					rounded={0}
+					backgroundColor={inputBgColor}
+					color={inputColor}
 				/>
 			</FormControl>
 			<FormControl>
@@ -81,6 +95,8 @@ const ContactForm = () => {
 					name='address'
 					rounded={0}
 					onChange={handleAddressChange}
+					backgroundColor={inputBgColor}
+					color={inputColor}
 				/>
 			</FormControl>
 			<SimpleGrid columns={2} spacing={2}>
@@ -92,6 +108,8 @@ const ContactForm = () => {
 						name='email'
 						rounded={0}
 						onChange={handleEmailChange}
+						backgroundColor={inputBgColor}
+						color={inputColor}
 					/>
 				</FormControl>
 				<FormControl>
@@ -102,6 +120,8 @@ const ContactForm = () => {
 						value={phone}
 						name='phone'
 						onChange={handlePhoneChange}
+						backgroundColor={inputBgColor}
+						color={inputColor}
 					/>
 				</FormControl>
 			</SimpleGrid>
@@ -113,6 +133,8 @@ const ContactForm = () => {
 					value={subject}
 					name='subject'
 					onChange={handleSubjectChange}
+					backgroundColor={inputBgColor}
+					color={inputColor}
 				/>
 			</FormControl>
 			<FormControl>
@@ -128,10 +150,14 @@ const ContactForm = () => {
 					value={body}
 					name='body'
 					onChange={handleBodyChange}
+					backgroundColor={inputBgColor}
+					color={inputColor}
 				/>
 			</FormControl>
 			<Button
 				color='black'
+				// colorScheme='black'
+				backgroundColor='white'
 				rounded={0}
 				type='submit'
 				isLoading={isLoading}

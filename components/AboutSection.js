@@ -1,34 +1,41 @@
 import Image from 'next/image';
 import { Box, Center, Heading, Stack, Text, VStack } from '@chakra-ui/react';
 
-const AboutSection = () => {
+const AboutSection = ({ color, backgroundColor }) => {
 	return (
 		<Stack
 			direction={['column', null, 'row']}
 			// alignItems='center'
-			spacing={4}
+			spacing={[null, null, 4]}
 			py={[0, null, 4]}
 		>
-			<Box bg='red' textAlign='center' maxW={['full', null, '50%']}>
+			<Box bg={backgroundColor} textAlign='center' maxW={['full', null, '50%']}>
 				<VStack p={10}>
-					<Heading color='white' id='about'>
+					<Heading color={color} id='about'>
 						About
 					</Heading>
-					<Text color='white'>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-						eiusmod tempor incididunt ut labore et dolore magna aliqua. Leo vel
-						orci porta non pulvinar. Eu lobortis elementum nibh tellus molestie
-						nunc non blandit. Neque gravida in fermentum et sollicitudin ac orci
-						phasellus. Ipsum dolor sit amet consectetur adipiscing elit ut
-						aliquam purus.
+					<Text color={color}>
+						Embedded Ink LLC is a freight company started in 2022 for new or
+						experienced drivers looking for a balanced home and work life with
+						fair pay.
 					</Text>
-					<Text color='white'>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-						eiusmod tempor incididunt ut labore et dolore magna aliqua. Leo vel
-						orci porta non pulvinar. Eu lobortis elementum nibh tellus molestie
-						nunc non blandit. Neque gravida in fermentum et sollicitudin ac orci
-						phasellus. Ipsum dolor sit amet consectetur adipiscing elit ut
-						aliquam purus. Nascetur ridiculus mus mauris vitae ultricies leo.
+					<Heading color={color} id='about'>
+						Vision
+					</Heading>
+					<Text color={color}>To create a space where everybody wins</Text>
+					<Heading color={color} id='about'>
+						Mission
+					</Heading>
+					<Text color={color}>
+						To help freight thrive by building collaborative relationships for
+						on time deliveries
+					</Text>
+					<Heading color={color} id='about'>
+						Goals
+					</Heading>
+					<Text color={color}>
+						Creating an open environment that promotes good business practices
+						and employee employer relations.
 					</Text>
 				</VStack>
 			</Box>
