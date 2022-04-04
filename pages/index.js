@@ -21,7 +21,7 @@ export default function Home() {
           color="white"
           inputBgColor="blue.600"
           inputColor="white"
-          formColor="blue.500"
+          formColor="blue.400"
         />
         <Footer />
       </Flex>
