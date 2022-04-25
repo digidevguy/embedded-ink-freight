@@ -1,9 +1,24 @@
-import { Box, Button, ButtonGroup, Flex, Image } from '@chakra-ui/react';
+import { useRef } from 'react';
+import {
+	Box,
+	Button,
+	ButtonGroup,
+	Flex,
+	IconButton,
+	Image,
+	useColorModeValue,
+	useDisclosure,
+} from '@chakra-ui/react';
 import DarkModeSwitch from './DarkModeSwitch';
+import { HamburgerIcon } from '@chakra-ui/icons';
 
 import navList from '../lib/navList';
+import Drawer from './Drawer';
 
 const Layout = ({ children }) => {
+	const { isOpen, onOpen, onClose } = useDisclosure();
+	const menuRef = useRef();
+
 	return (
 		<>
 			<Flex
@@ -12,28 +27,40 @@ const Layout = ({ children }) => {
 				mx='auto'
 				justifyContent='space-between'
 				alignItems='center'
+				pos='sticky'
+				top={0}
+				bg={useColorModeValue('white', '#1a202c')}
+				zIndex='banner'
 			>
-				<Image src='/images/icon-PNG.png' boxSize='5%' />
-				{/* <Heading size='sm' my='auto'>
-					EMBEDDEDINK LLC
-				</Heading> */}
-
-				<Box w='50%' h='50px'></Box>
-				<ButtonGroup>
-					{navList.map((link, i) => (
-						<Button
-							key={i}
-							aria-label={link.title}
-							variant='ghost'
-							as='a'
-							href={link.href}
-							rounded={0}
-						>
-							{link.title}
-						</Button>
-					))}
+				<Flex gap='1rem' align='center'>
+					<IconButton
+						aria-label='Menu button'
+						icon={<HamburgerIcon />}
+						bg='none'
+						onClick={onOpen}
+						display={['inherit', 'none']}
+					/>
+					<Drawer isOpen={isOpen} onClose={onClose} />
+					<Image src='/images/icon-PNG.png' boxSize={['10%', '5%']} />
+				</Flex>
+				{/* <Box w='50%' h='50px'></Box> */}
+				<Flex gap='1rem'>
+					<ButtonGroup display={['none', 'inherit']}>
+						{navList.map((link, i) => (
+							<Button
+								key={i}
+								aria-label={link.title}
+								variant='ghost'
+								as='a'
+								href={link.href}
+								rounded={0}
+							>
+								{link.title}
+							</Button>
+						))}
+					</ButtonGroup>
 					<DarkModeSwitch />
-				</ButtonGroup>
+				</Flex>
 			</Flex>
 			<Flex maxW='1200px' flexDirection='column' mx='auto'>
 				{children}

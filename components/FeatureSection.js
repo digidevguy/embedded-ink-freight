@@ -8,6 +8,7 @@ const FeatureSection = ({ cardColor, color }) => {
 			direction={['column', 'row']}
 			justifyContent='space-evenly'
 			p={[2, 0]}
+			id='features'
 		>
 			<FeatureCard
 				cardColor={cardColor}

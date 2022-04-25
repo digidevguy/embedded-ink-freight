@@ -13,7 +13,7 @@ const FaqSection = ({ bgColor, color }) => {
 			m={['none', 'auto']}
 			gap='1rem'
 		>
-			<Heading as='h2' size='lg'>
+			<Heading as='h2' size='lg' id='faq'>
 				Frequently Asked Questions
 			</Heading>
 			<Divider />

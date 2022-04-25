@@ -21,7 +21,7 @@ const AboutSection = ({ color, backgroundColor }) => {
 					textAlign='center'
 					justify='center'
 				>
-					<Heading color={color} id='about'>
+					<Heading as='h2' size='lg' color={color} id='about'>
 						About Embedded Ink Freight
 					</Heading>
 					<Divider />
@@ -65,7 +65,9 @@ const AboutSection = ({ color, backgroundColor }) => {
 					textAlign='center'
 					justify='center'
 				>
-					<Heading color={color}>Our Mission</Heading>
+					<Heading as='h2' size='lg' color={color}>
+						Our Mission
+					</Heading>
 					<Divider />
 					<Text color={color} textAlign='start'>
 						To help freight thrive by building collaborative relationships for
