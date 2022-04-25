@@ -1,15 +1,7 @@
-import {
-	Avatar,
-	Box,
-	Button,
-	ButtonGroup,
-	Flex,
-	Heading,
-	Icon,
-	Image,
-	Link,
-} from '@chakra-ui/react';
+import { Box, Button, ButtonGroup, Flex, Image } from '@chakra-ui/react';
 import DarkModeSwitch from './DarkModeSwitch';
+
+import navList from '../lib/navList';
 
 const Layout = ({ children }) => {
 	return (
@@ -28,13 +20,19 @@ const Layout = ({ children }) => {
 
 				<Box w='50%' h='50px'></Box>
 				<ButtonGroup>
-					<Button variant='ghost' as='a' href='#about' rounded={0}>
-						About
-					</Button>
-					<Button variant='ghost' as='a' href='#contact' rounded={0}>
-						Contact
-					</Button>
-					{/* <DarkModeSwitch /> */}
+					{navList.map((link, i) => (
+						<Button
+							key={i}
+							aria-label={link.title}
+							variant='ghost'
+							as='a'
+							href={link.href}
+							rounded={0}
+						>
+							{link.title}
+						</Button>
+					))}
+					<DarkModeSwitch />
 				</ButtonGroup>
 			</Flex>
 			<Flex maxW='1200px' flexDirection='column' mx='auto'>

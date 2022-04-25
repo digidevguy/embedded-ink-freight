@@ -1,46 +1,37 @@
 import Image from 'next/image';
-import { Box, Center, Heading, Stack, Text, VStack } from '@chakra-ui/react';
+import {
+	Box,
+	Center,
+	Divider,
+	Flex,
+	Heading,
+	Stack,
+	Text,
+	VStack,
+} from '@chakra-ui/react';
 
 const AboutSection = ({ color, backgroundColor }) => {
 	return (
 		<>
-			<Stack
-				direction={['column', null, 'row']}
-				// alignItems='center'
-				spacing={[null, null, 4]}
-				py={[0, null, 4]}
-			>
+			<Flex flexDirection={['column', null, 'row']} gap={[0, '1rem']}>
 				<VStack
 					p={5}
 					bg={backgroundColor}
 					maxW={['full', null, '50%']}
 					textAlign='center'
+					justify='center'
 				>
 					<Heading color={color} id='about'>
-						About
+						About Embedded Ink Freight
 					</Heading>
-					<Text color={color}>
+					<Divider />
+					<Text color={color} textAlign='start'>
 						Embedded Ink LLC is a freight company started in 2022 for new or
 						experienced drivers looking for a balanced home and work life with
-						fair pay.
-					</Text>
-					<Heading color={color} id='about'>
-						Vision
-					</Heading>
-					<Text color={color}>To create a space where everybody wins</Text>
-					<Heading color={color} id='about'>
-						Mission
-					</Heading>
-					<Text color={color}>
-						To help freight thrive by building collaborative relationships for
-						on time deliveries
-					</Text>
-					<Heading color={color} id='about'>
-						Goals
-					</Heading>
-					<Text color={color}>
-						Creating an open environment that promotes good business practices
-						and employee employer relations.
+						fair pay. Our primary focus is on personal growth with open terms
+						that benefit everyone. Every employee is valued, proven with
+						negotiations to their satisfaction. Our vision is to create a space
+						where everybody wins.
 					</Text>
 				</VStack>
 				<Center
@@ -48,25 +39,14 @@ const AboutSection = ({ color, backgroundColor }) => {
 					overflow='hidden'
 					alignItems='center'
 				>
-					{/* <Image
-						src='/images/obi-onyeador-Irdm0-tevPc-unsplash (1).jpg'
-						width={1920}
-						height={1440}
-					/> */}
 					<Image
 						src='/images/obi-onyeador-Irdm0-tevPc-unsplash.jpg'
 						width={640}
 						height={480}
 					/>
 				</Center>
-			</Stack>
-
-			<Stack
-				direction={['column-reverse', null, 'row']}
-				// alignItems='center'
-				spacing={[null, null, 4]}
-				py={[0, null, 4]}
-			>
+			</Flex>
+			<Flex flexDirection={['column-reverse', null, 'row']} gap={[0, '1rem']}>
 				<Center
 					maxW={['full', null, '50%']}
 					overflow='hidden'
@@ -78,41 +58,25 @@ const AboutSection = ({ color, backgroundColor }) => {
 						height={427}
 					/>
 				</Center>
-
 				<VStack
 					p={5}
 					bg={backgroundColor}
-					textAlign='center'
 					maxW={['full', null, '50%']}
+					textAlign='center'
+					justify='center'
 				>
-					<Heading color={color} id='about'>
-						About
-					</Heading>
-					<Text color={color}>
-						Embedded Ink LLC is a freight company started in 2022 for new or
-						experienced drivers looking for a balanced home and work life with
-						fair pay.
-					</Text>
-					<Heading color={color} id='about'>
-						Vision
-					</Heading>
-					<Text color={color}>To create a space where everybody wins</Text>
-					<Heading color={color} id='about'>
-						Mission
-					</Heading>
-					<Text color={color}>
+					<Heading color={color}>Our Mission</Heading>
+					<Divider />
+					<Text color={color} textAlign='start'>
 						To help freight thrive by building collaborative relationships for
-						on time deliveries
+						on time deliveries.
 					</Text>
-					<Heading color={color} id='about'>
-						Goals
-					</Heading>
-					<Text color={color}>
-						Creating an open environment that promotes good business practices
-						and employee employer relations.
+					<Text color={color} textAlign='start'>
+						To create an open environment that promotes good business practices
+						and employee employer relations.{' '}
 					</Text>
 				</VStack>
-			</Stack>
+			</Flex>
 		</>
 	);
 };

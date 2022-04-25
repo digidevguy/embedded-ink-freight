@@ -20,10 +20,8 @@ const ContactForm = ({
 	formColor,
 }) => {
 	const [name, setName] = useState('');
-	const [address, setAddress] = useState('');
 	const [email, setEmail] = useState('');
 	const [phone, setPhone] = useState('');
-	const [subject, setSubject] = useState('');
 	const [body, setBody] = useState('');
 	const [isLoading, setIsLoading] = useState(false);
 	const toast = useToast();
@@ -31,17 +29,11 @@ const ContactForm = ({
 	const handleNameChange = (e) => {
 		setName(e.target.value);
 	};
-	const handleAddressChange = (e) => {
-		setAddress(e.target.value);
-	};
 	const handleEmailChange = (e) => {
 		setEmail(e.target.value);
 	};
 	const handlePhoneChange = (e) => {
 		setPhone(e.target.value);
-	};
-	const handleSubjectChange = (e) => {
-		setSubject(e.target.value);
 	};
 	const handleBodyChange = (e) => {
 		setBody(e.target.value);
@@ -87,18 +79,6 @@ const ContactForm = ({
 					color={inputColor}
 				/>
 			</FormControl>
-			<FormControl>
-				<FormLabel>Address</FormLabel>
-				<Input
-					placeholder='Enter your address'
-					value={address}
-					name='address'
-					rounded={0}
-					onChange={handleAddressChange}
-					backgroundColor={inputBgColor}
-					color={inputColor}
-				/>
-			</FormControl>
 			<SimpleGrid columns={2} spacing={2}>
 				<FormControl isRequired>
 					<FormLabel>Email</FormLabel>
@@ -125,18 +105,6 @@ const ContactForm = ({
 					/>
 				</FormControl>
 			</SimpleGrid>
-			<FormControl>
-				<FormLabel>Subject</FormLabel>
-				<Input
-					placeholder='Type the subject'
-					rounded={0}
-					value={subject}
-					name='subject'
-					onChange={handleSubjectChange}
-					backgroundColor={inputBgColor}
-					color={inputColor}
-				/>
-			</FormControl>
 			<FormControl>
 				<FormLabel>Message</FormLabel>
 				<Textarea
