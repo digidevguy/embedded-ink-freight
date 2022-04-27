@@ -6,6 +6,10 @@ import {
 	Flex,
 	IconButton,
 	Image,
+	Menu,
+	MenuButton,
+	MenuItem,
+	MenuList,
 	useColorModeValue,
 	useDisclosure,
 } from '@chakra-ui/react';
@@ -14,6 +18,7 @@ import { HamburgerIcon } from '@chakra-ui/icons';
 
 import navList from '../lib/navList';
 import Drawer from './Drawer';
+import Link from 'next/link';
 
 const Layout = ({ children }) => {
 	const { isOpen, onOpen, onClose } = useDisclosure();
@@ -33,14 +38,22 @@ const Layout = ({ children }) => {
 				zIndex='banner'
 			>
 				<Flex gap='1rem' align='center'>
-					<IconButton
-						aria-label='Menu button'
-						icon={<HamburgerIcon />}
-						bg='none'
-						onClick={onOpen}
-						display={['inherit', 'none']}
-					/>
-					<Drawer isOpen={isOpen} onClose={onClose} />
+					<Menu>
+						<MenuButton
+							as={IconButton}
+							aria-label='Menu button'
+							icon={<HamburgerIcon />}
+							bg='none'
+							display={['inherit', 'none']}
+						/>
+						<MenuList>
+							{navList.map((item) => (
+								<Link key={item.title} href={item.href} passHref>
+									<MenuItem as='a'>{item.title}</MenuItem>
+								</Link>
+							))}
+						</MenuList>
+					</Menu>
 					<Image src='/images/icon-PNG.png' boxSize={['10%', '5%']} />
 				</Flex>
 				{/* <Box w='50%' h='50px'></Box> */}
