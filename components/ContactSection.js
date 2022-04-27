@@ -1,10 +1,8 @@
 import {
 	Divider,
-	Flex,
 	Heading,
 	ListItem,
 	Stack,
-	Text,
 	UnorderedList,
 	VStack,
 } from '@chakra-ui/react';

@@ -1,4 +1,4 @@
-import { Divider, Flex, Heading, List, Stack } from '@chakra-ui/react';
+import { Divider, Flex, Heading, List } from '@chakra-ui/react';
 
 import FaqItem from './FaqItem';
 

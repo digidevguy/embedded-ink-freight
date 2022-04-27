@@ -1,13 +1,4 @@
-import {
-	Button,
-	ButtonGroup,
-	Flex,
-	Heading,
-	Link,
-	Stack,
-	Text,
-	VStack,
-} from '@chakra-ui/react';
+import { Link as ChakraLink, Text, VStack } from '@chakra-ui/react';
 
 const Footer = () => {
 	return (
@@ -19,10 +10,12 @@ const Footer = () => {
 				textAlign='center'
 				py={4}
 			>
-				<Text>© 2021 Embedded Ink, LLC</Text>
+				<Text>©2022 Embedded Ink, LLC</Text>
 				<Text>
 					This website was built by{' '}
-					<Link href='https://mattlittrell.dev'>Matthew Littrell</Link>
+					<ChakraLink href='https://mattlittrell.dev'>
+						Matthew Littrell
+					</ChakraLink>
 				</Text>
 			</VStack>
 		</>

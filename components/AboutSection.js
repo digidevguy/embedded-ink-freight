@@ -5,7 +5,6 @@ import {
 	Divider,
 	Flex,
 	Heading,
-	Stack,
 	Text,
 	VStack,
 } from '@chakra-ui/react';
