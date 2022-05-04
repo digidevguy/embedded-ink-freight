@@ -2,18 +2,11 @@ import { sendContactEmail } from '../../middleware/mailer';
 
 const handler = async (req, res) => {
 	if (req.method === 'POST') {
-		const { name, address, email, phone, subject, body } = req.body;
+		const { name, email, phone, body } = req.body;
 
 		try {
 			console.log('Sending');
-			const response = await sendContactEmail(
-				name,
-				address,
-				email,
-				phone,
-				subject,
-				body
-			);
+			const response = await sendContactEmail(name, email, phone, body);
 			console.log(response);
 			return res.status(201).json({ message: 'Message sent successfully!' });
 		} catch {
