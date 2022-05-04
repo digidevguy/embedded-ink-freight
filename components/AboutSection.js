@@ -25,12 +25,12 @@ const AboutSection = ({ color, backgroundColor }) => {
 					</Heading>
 					<Divider />
 					<Text color={color} textAlign='start'>
-						Embedded Ink LLC is a freight company started in 2022 for new or
-						experienced drivers looking for a balanced home and work life with
-						fair pay. Our primary focus is on personal growth with open terms
-						that benefit everyone. Every employee is valued, proven with
-						negotiations to their satisfaction. Our vision is to create a space
-						where everybody wins.
+						Embedded Ink LLC is a freight company started in 2022. It's a great
+						space for new or experienced drivers looking for a balanced home and
+						work life with fair pay. Our primary focus is on personal growth
+						with open terms that benefit everyone. Every employee is valued,
+						proven with negotiations to their satisfaction. Our vision is to
+						create a space where everybody wins.
 					</Text>
 				</VStack>
 				<Center
