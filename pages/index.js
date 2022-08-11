@@ -14,6 +14,11 @@ export default function Home() {
 		<>
 			<Head>
 				<title>EMBEDDEDINK, LLC</title>
+				<meta name='description' content='' />
+				<meta
+					name='google-site-verification'
+					content='SRponPtAX2laWTcuoEB3ivrYvareAKkyhQADRoOBxgM'
+				/>
 			</Head>
 			<Flex flexDirection='column' gap={[0, '1rem']}>
 				<HeroBanner />
